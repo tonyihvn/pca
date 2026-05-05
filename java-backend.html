@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Java Academy | Master Backend Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-slate-900 font-sans">
+
+    <!--<nav class="flex items-center justify-between px-10 py-5 bg-slate-900 text-white sticky top-0 z-50">
+        <div class="text-1xl font-mono font-bold tracking-tighter">
+            <a href="index.html"><span class="text-orange-500">public class</span> Academy {}</a>
+        </div>
+        <div class="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest">
+			<a href="index.html" class="hover:text-orange-500 transition">Home</a>
+            <a href="#course" class="hover:text-orange-500 transition">Curriculum</a>
+            <a href="#overview" class="hover:text-orange-500 transition">Program Overview</a>
+            <a href="#mentor" class="hover:text-orange-500 transition">Mentorship</a>
+        </div>
+        <a href="#enroll" class="border-2 border-orange-500 text-orange-500 px-6 py-2 rounded-md font-bold hover:bg-orange-500 hover:text-white transition">Apply Now</a>
+    </nav> -->
+	<nav class="flex items-center justify-between px-6 md:px-10 py-5 bg-slate-900 text-white sticky top-0 z-50">
+        <div class="text-lg sm:text-xl md:text-2xl font-mono font-bold tracking-tighter">
+            <a href="index.html"><span class="text-orange-500">public class</span> Academy {}</a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest">
+            <a href="index.html" class="hover:text-orange-500 transition">Home</a>
+            <a href="#course" class="hover:text-orange-500 transition">Curriculum</a>
+            <a href="#overview" class="hover:text-orange-500 transition">Program Overview</a>
+            <a href="#mentor" class="hover:text-orange-500 transition">Mentorship</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a href="#enroll" class="hidden sm:block border-2 border-orange-500 text-orange-500 px-6 py-2 rounded-md font-bold hover:bg-orange-500 hover:text-white transition">Apply Now</a>
+            
+            <!-- Hamburger Button -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-900 z-[60] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8 text-xl font-bold uppercase tracking-widest">
+            <button id="menu-close" class="absolute top-6 right-8 text-white">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+			<a href="index.html" class="hover:text-orange-500 transition">Home</a>
+            <a href="#course" class="nav-link hover:text-orange-500 transition">Curriculum</a>
+            <a href="#overview" class="nav-link hover:text-orange-500 transition">Program Overview</a>
+            <a href="#mentor" class="nav-link hover:text-orange-500 transition">Mentorship</a>
+            <a href="#enroll" class="nav-link border-2 border-orange-500 text-orange-500 px-8 py-3 rounded-md">Apply Now</a>
+        </div>
+		
+    </nav>
+
+    <header class="bg-slate-900 text-white pt-20 pb-32 px-10 border-b-8 border-orange-500">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-3/5 space-y-8">
+                <div class="inline-block px-4 py-1 bg-orange-500/20 text-orange-500 rounded text-xs font-bold uppercase tracking-widest">
+                    10-Year Senior Engineer Led
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    Build Scalable <br><span class="text-orange-500">Distributed Systems</span>
+                </h1>
+                <p class="text-xl text-slate-400 max-w-xl font-light leading-relaxed">
+                    Move beyond basic CRUD. Master Spring Boot, Microservices, and High-Performance Databases used by the world's leading financial institutions.
+                </p>
+                <div class="flex space-x-6">
+                   <!-- <button href="#course" class="bg-orange-500 text-white px-10 py-4 rounded font-bold shadow-lg shadow-orange-500/20 hover:scale-105 transition">Explore Syllabus</button> -->
+                    <a href="#course" 
+   class="inline-block bg-orange-500 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-1 transition-all duration-300 ease-out active:scale-95 focus:ring-4 focus:ring-orange-500/20 outline-none">
+    <div class="flex items-center space-x-2">
+        <span>Explore Syllabus</span>
+        <i class="fa-solid fa-arrow-down text-sm"></i>
+    </div>
+</a> 
+					<div class="flex items-center space-x-4 grayscale opacity-50">
+                        <i class="fa-brands fa-java text-4xl"></i>
+                        <i class="fa-brands fa-docker text-4xl"></i>
+                        <i class="fa-brands fa-aws text-4xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block md:w-2/5 font-mono text-xs bg-slate-800 p-6 rounded-lg border border-slate-700 shadow-2xl">
+                <p class="text-green-400">// Master modern Java backend</p>
+                <p class="text-purple-400">@Service</p>
+                <p class="text-blue-300">public class</p> <p class="inline text-yellow-200">BackendService</p> {
+                <div class="pl-4 mt-2">
+                    <p class="text-purple-400">@Autowired</p>
+                    <p class="text-blue-300">private</p> TigerBeetleDB db;
+                    <br>
+                    <p class="text-blue-300">public</p> Response <span class="text-yellow-200">handleTransaction</span>() {
+                    <p class="pl-4 text-slate-400">return db.process(ledger);</p>
+                    }
+                </div>
+                <p>}</p>
+            </div>
+        </div>
+    </header>
+	<section id="enroll" class="py-24 bg-white px-6">
+    <div class="max-w-4xl mx-auto border-2 border-slate-100 rounded-3xl shadow-2xl shadow-slate-200/50 overflow-hidden">
+        <div class="flex flex-col md:flex-row">
+            
+            <div class="md:w-3/5 p-10 bg-slate-50">
+                <div class="flex items-center space-x-2 text-orange-600 font-bold mb-6">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="uppercase tracking-widest text-xs">Enrollment Open</span>
+                </div>
+                
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Next Cohort Starts:</h2>
+                <p class="text-2xl font-mono text-slate-700 mb-8">June 2026 <span class="text-sm font-sans text-slate-400 font-normal">(Virtual Class)</span></p>
+				<div class="flex items-center space-x-3 text-slate-700 font-medium">
+                            <i class="fa-solid fa-users text-orange-500"></i>
+                            <span>Small Groups (20 Seats Max)</span>
+                        </div>
+                <ul class="space-y-4">
+                    <li class="flex items-start space-x-3 text-slate-600">
+                        <i class="fa-solid fa-circle-check text-orange-500 mt-1"></i>
+                        <span><strong>6 Months Intensive Training:</strong> Deep dive into distributed systems.</span>
+                    </li>
+                    <li class="flex items-start space-x-3 text-slate-600">
+                        <i class="fa-solid fa-circle-check text-orange-500 mt-1"></i>
+                        <span><strong>Capstone Project:</strong> Build a production-grade Fintech backend Application</span>
+                    </li>
+                    <li class="flex items-start space-x-3 text-slate-600">
+                        <i class="fa-solid fa-circle-check text-orange-500 mt-1"></i>
+                        <span><strong>Career Support:</strong> Professional CV & Interview Prep sessions.</span>
+                    </li>
+                    <li class="flex items-start space-x-3 text-slate-600">
+                        <i class="fa-solid fa-circle-check text-orange-500 mt-1"></i>
+                        <span><strong>Direct Pipeline:</strong> Top performers qualify for Internship Opportunities.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="md:w-2/5 p-10 bg-slate-900 text-white flex flex-col justify-center items-center text-center">
+                <p class="text-slate-400 uppercase tracking-widest text-xs font-bold mb-2">Investment</p>
+                <div class="text-5xl font-bold text-orange-500 mb-2">N250,000</div>
+                <p class="text-slate-400 text-sm mb-8 leading-relaxed">Includes all course materials, <br>mentorship, and certificate.</p>
+                
+                <div class="w-full space-y-4">
+                    <!--<button class="w-full bg-orange-500 text-white py-4 rounded-lg font-bold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20">Secure Your Spot</button>-->
+                    <a href="#register" class="inline-block bg-orange-500 text-white px-16 py-4 rounded-xl font-bold shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-1 transition-all duration-300 ease-out active:scale-95 focus:ring-4 focus:ring-orange-500/20 outline-none">
+						<div class="flex items-center space-x-2">
+							<span>Secure Your Spot</span>
+							<i class="fa-solid fa-arrow-down text-sm"></i>
+						</div>
+					</a> 
+					<p class="text-xs text-slate-500 italic">Flexible payment plan available</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	<section id="overview" class="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <span class="uppercase tracking-widest text-orange-500 text-xs font-bold px-3 py-1 bg-orange-500/10 rounded">Program Overview</span>
+        <h2 class="text-4xl md:text-5xl font-bold mt-6 tracking-tight">Bridge the gap between <br><span class="text-orange-500">Code and Engineering</span></h2>
+        <p class="mt-8 text-lg max-w-3xl mx-auto text-slate-400 leading-relaxed font-light">
+            Our Java Backend Development Program is designed to transform you from a developer into an architect. You won't just learn syntax; you will master the <strong>distributed systems, cloud-native patterns, and security</strong> used by top-tier engineering teams worldwide.
+        </p>
+    </div>
+
+    <!-- Bottom Divider -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,224L80,213.3C160,203,320,181,480,170.7C640,160,800,160,960,181.3C1120,203,1280,245,1360,266.7L1440,288L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            </s
+    </div>
+</section>
+
+<section id="course" class="py-32 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <span class="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs">Path to Mastery</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mt-3">The Engineering Roadmap</h2>
+            <p class="mt-6 text-lg text-slate-500 max-w-2xl mx-auto font-light">
+                Structured into 3 intensive phases designed to take you from a developer to a <strong>Distinguished Backend Engineer</strong>.
+            </p>
+        </div>
+
+        <div class="relative pl-8 md:pl-0 mb-24">
+            <div class="flex items-center justify-center mb-10">
+                <div class="hidden md:block h-px bg-slate-200 flex-grow"></div>
+                <h3 class="px-6 text-xl font-mono font-bold text-slate-800 bg-white border-2 border-slate-100 py-2 rounded-full">01 // THE FOUNDATION</h3>
+                <div class="hidden md:block h-px bg-slate-200 flex-grow"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group p-8 bg-white rounded-2xl border border-slate-100 hover:border-orange-500 transition-all duration-300 shadow-sm">
+                    <div class="w-10 h-10 mb-6 flex items-center justify-center bg-slate-100 text-slate-900 rounded-lg group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+					<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 01</span>
+                    <h4 class="font-bold text-slate-900 mb-2">Core Java & OOP</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Mastering memory management, stream APIs, and clean code principles.</p>
+                </div>
+                <div class="group p-8 bg-white rounded-2xl border border-slate-100 hover:border-orange-500 transition-all duration-300 shadow-sm">
+                    <div class="w-10 h-10 mb-6 flex items-center justify-center bg-slate-100 text-slate-900 rounded-lg group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+					<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 02</span>
+                    <h4 class="font-bold text-slate-900 mb-2">Spring Boot</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Building production-ready REST APIs with Spring Data and Security.</p>
+                </div>
+                <div class="group p-8 bg-white rounded-2xl border border-slate-100 hover:border-orange-500 transition-all duration-300 shadow-sm">
+                    <div class="w-10 h-10 mb-6 flex items-center justify-center bg-slate-100 text-slate-900 rounded-lg group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+					<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 03</span>
+                    <h4 class="font-bold text-slate-900 mb-2">Databases</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Schema design, JPA/Hibernate, and query optimization for scale.</p>
+                </div>
+                <div class="group p-8 bg-white rounded-2xl border border-slate-100 hover:border-orange-500 transition-all duration-300 shadow-sm">
+                    <div class="w-10 h-10 mb-6 flex items-center justify-center bg-slate-100 text-slate-900 rounded-lg group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-git-alt"></i>
+                    </div>
+					<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 04</span>
+                    <h4 class="font-bold text-slate-900 mb-2">Git Flow</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Advanced version control and professional CI/CD integration.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative pl-8 md:pl-0 mb-24">
+            <div class="flex items-center justify-center mb-10">
+                <div class="hidden md:block h-px bg-orange-100 flex-grow"></div>
+                <h3 class="px-6 text-xl font-mono font-bold text-orange-600 bg-orange-50 border-2 border-orange-100 py-2 rounded-full">02 // CLOUD NATIVE</h3>
+                <div class="hidden md:block h-px bg-orange-100 flex-grow"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex items-center p-8 bg-slate-900 text-white rounded-3xl overflow-hidden relative group">
+                    <div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-aws text-9xl"></i>
+                    </div>
+                    <div class="relative z-10">
+						<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 05</span>
+                        <h4 class="text-xl font-bold mb-2">AWS Ecosystem</h4>
+                        <p class="text-slate-400 text-sm max-w-xs">Deploying to EC2, managing S3 buckets, and configuring VPCs for enterprise apps.</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-8 bg-slate-900 text-white rounded-3xl overflow-hidden relative group">
+                    <div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-docker text-9xl"></i>
+                    </div>
+                    <div class="relative z-10">
+					<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 06</span>
+                        <h4 class="text-xl font-bold mb-2">Docker & Kubernetess</h4>
+                        <p class="text-slate-400 text-sm max-w-xs">Mastering container orchestration and zero-downtime deployment strategies.</p>
+                    </div>
+                </div>
+				
+				
+		
+			<div class="flex items-center p-8 bg-slate-900 text-white rounded-3xl overflow-hidden relative group">
+    <div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+        <i class="fa-solid fa-chart-line text-9xl"></i>
+    </div>
+    <div class="relative z-10">
+        <span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 07</span>
+        <h4 class="text-xl font-bold mb-2">Observability & Monitoring</h4>
+        <p class="text-slate-400 text-sm max-w-xs">Implementing the ELK stack, Prometheus, and distributed tracing with Zipkin to monitor high-traffic systems.</p>
+    </div>
+</div>
+
+<div class="flex items-center p-8 bg-slate-900 text-white rounded-3xl overflow-hidden relative group">
+    <div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+        <i class="fa-solid fa-gears text-9xl"></i>
+    </div>
+    <div class="relative z-10">
+        <span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 08</span>
+        <h4 class="text-xl font-bold mb-2">Configuration Management</h4>
+        <p class="text-slate-400 text-sm max-w-xs">Mastering Spring Cloud Config and HashiCorp Vault for secure, centralized property management across microservices.</p>
+    </div>
+</div>
+        
+            </div>
+        </div>
+
+        <div class="relative pl-8 md:pl-0">
+            <div class="flex items-center justify-center mb-10">
+                <div class="hidden md:block h-px bg-slate-200 flex-grow"></div>
+                <h3 class="px-6 text-xl font-mono font-bold text-slate-800 bg-white border-2 border-slate-100 py-2 rounded-full">03 // DISTRIBUTED SYSTEMS</h3>
+                <div class="hidden md:block h-px bg-slate-200 flex-grow"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="border-l-4 border-orange-500 pl-6 py-2">
+					<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 09</span>
+                    <h4 class="font-bold text-slate-900">Event-Driven Architecture</h4>
+                    <p class="text-sm text-slate-500 mt-2">Implementing Kafka/RabbitMQ for high-throughput messaging.</p>
+                </div>
+                <div class="border-l-4 border-orange-500 pl-6 py-2">
+					<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 10</span>
+                    <h4 class="font-bold text-slate-900">Resilience Patterns</h4>
+                    <p class="text-sm text-slate-500 mt-2">Circuit breakers, rate limiting, and fault-tolerant service mesh.</p>
+                </div>
+                <div class="border-l-4 border-orange-500 pl-6 py-2">
+				<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 11</span>
+                    <h4 class="font-bold text-slate-900">Microservices Security</h4>
+                    <p class="text-sm text-slate-500 mt-2">OAuth2, OpenID Connect, and central identity management.</p>
+                </div>
+				<div class="border-l-4 border-orange-500 pl-6 py-2">
+				<span class="text-orange-500 font-mono text-xs mb-2 block tracking-widest">MODULE 12</span>
+                    <h4 class="font-bold text-slate-900">Gateway & Routing</h4>
+                    <p class="text-sm text-slate-500 mt-2">API gateways, routing strategies, and cross-cutting concerns.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+ <!--  <section id="mentor" class="py-24 bg-slate-100 px-10">  
+
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-48 h-48 bg-slate-300 rounded-full flex-shrink-0 overflow-hidden border-4 border-white shadow-xl">
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=400" alt="Instructor" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-4">Learn from a Senior Engineer</h2>
+                <p class="text-lg text-slate-600 leading-relaxed italic">
+                    "I've spent 8 years building backend systems for high-volume research institutes and fintech platforms. I don't teach you how to write code; I teach you how to engineer systems that don't break at 3 AM."
+                </p>
+                <div class="mt-6 flex space-x-4">
+                    <span class="px-3 py-1 bg-white text-slate-700 text-xs font-bold rounded shadow-sm border">JAVA EXPERT</span>
+                    <span class="px-3 py-1 bg-white text-slate-700 text-xs font-bold rounded shadow-sm border">SPRING MASTER</span>
+                </div>
+            </div>
+        </div>
+    </section>-->
+	
+	<section id="mentor" class="py-24 bg-slate-100 px-10">
+		<!-- <section id="tutor" class="py-32 bg-white relative overflow-hidden">-->
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center gap-16">
+            
+            <div class="md:w-1/2 relative">
+                <div class="relative z-10 w-full aspect-square max-w-md mx-auto group">
+                    <div class="absolute inset-0 border-2 border-orange-500 rounded-2xl translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+                    
+                    <img src="academy_image.jpeg" 
+                         alt="Tayo Oyelekan" 
+                         class="w-full h-full object-cover rounded-2xl shadow-2xl">
+                    
+                    <div class="absolute -bottom-6 -right-6 bg-slate-900 text-white p-6 rounded-xl shadow-xl hidden lg:block">
+                        <div class="flex items-center space-x-3">
+                            <div class="text-orange-500 text-2xl font-bold italic">10+</div>
+                            <div class="text-[10px] uppercase tracking-widest leading-tight text-slate-400">Years of<br>Production Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-1/2">
+                <div class="inline-block px-3 py-1 bg-orange-500/10 text-orange-600 rounded text-xs font-bold uppercase tracking-[0.2em] mb-6">
+                    Lead Instructor
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    Tayo Oyelekan
+                </h2>
+                <p class="text-xl text-slate-500 font-mono mt-2">Senior Backend Engineer</p>
+
+                <p class="mt-8 text-slate-600 leading-relaxed text-lg">
+                    With over a decade of experience engineering scalable systems across <strong>Fintech, Healthtech, Edutech, Social Media and Biometrics</strong>, Tayo has architected high-throughput solutions for industry giants including <span class="text-slate-900 font-semibold">Moniepoint Group, Institue of Human Virology Nigeria, GoalSpaces USA, and Biosec Solutions among others</span>. 
+                </p>
+                
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                    He doesn't just teach syntax—he mentors you in the <strong>professional-grade architecture</strong> required to thrive in multinational engineering teams.
+                </p>
+
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3 text-slate-700">
+                        <i class="fa-solid fa-check-double text-orange-500"></i>
+                        <span class="text-sm font-medium">Spring Boot & Microservices Expert</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-700">
+                        <i class="fa-solid fa-check-double text-orange-500"></i>
+                        <span class="text-sm font-medium">AWS Cloud Architecture</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-700">
+                        <i class="fa-solid fa-check-double text-orange-500"></i>
+                        <span class="text-sm font-medium">Docker & Kubernetes Mastery</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-700">
+                        <i class="fa-solid fa-check-double text-orange-500"></i>
+                        <span class="text-sm font-medium">Mentored 50+ Senior Devs</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 flex items-center space-x-6">
+                    <!--<a href="#enroll" class="bg-slate-900 text-white px-10 py-4 rounded-xl font-bold shadow-xl hover:bg-slate-800 transition-all hover:-translate-y-1">
+                        Secure Your Spot
+                    </a> -->
+                    <a href="https://www.linkedin.com/in/tayo-oyelekan-a9203b104/" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
+                        <i class="fa-brands fa-linkedin text-3xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="register" class="py-32 bg-slate-900 text-white relative">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-50"></div>
+    
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-16 items-start">
+            
+            <div class="lg:w-5/12 space-y-8">
+                <div>
+                    <h2 class="text-4xl font-extrabold tracking-tight mb-4">
+                        Begin Your <span class="text-orange-500">Mastery</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg leading-relaxed font-light">
+                        Join the May 2026 cohort. This is an intensive 6-month commitment designed for beginners ready to transition into senior-level distributed systems engineering.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">
+                            <i class="fa-solid fa-lock text-sm"></i>
+                        </div>
+                        <p class="text-sm text-slate-300">Secure your spot with a N50,000 deposit.</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">
+                            <i class="fa-solid fa-credit-card text-sm"></i>
+                        </div>
+                        <p class="text-sm text-slate-300">Flexible 3-month payment plans available.</p>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-800/50 border border-slate-700 rounded-2xl">
+                    <p class="text-xs text-slate-500 uppercase tracking-widest mb-2 font-bold">Limited Capacity</p>
+                    <p class="text-slate-300 text-sm">Only 20 slots available per cohort to ensure high-quality mentorship and direct code reviews.</p>
+                </div>
+            </div>
+
+            <div class="lg:w-7/12 w-full bg-white rounded-3xl p-8 md:p-12 shadow-2xl text-slate-900">
+				<div id="successMessage" class="hidden bg-green-100 text-green-800 p-4 rounded-xl mb-6 text-center">
+                Registration submitted successfully! Our team will contact you shortly.
+            </div>
+                <form  id="registrationForm"  class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Full Name</label>
+                            <input id="name" type="text" placeholder="John Doe" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition">
+							<p id="nameError" class="text-red-500 text-sm mt-1"></p>
+						</div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Email Address</label>
+                            <input id="email" type="email" placeholder="john@example.com" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition">
+							<p id="emailError" class="text-red-500 text-sm mt-1"></p>
+						</div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Phone Number</label>
+                            <input id="phone" type="tel" placeholder="+234..." required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition">
+							<p id="phoneError" class="text-red-500 text-sm mt-1"></p>
+						</div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Experience Level</label>
+                            <select id="level" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition appearance-none">
+                                <option>Beginner</option>
+                                <option>Intermediate</option>
+                                <option>Senior</option>
+                            </select>
+							<p id="levelError" class="text-red-500 text-sm mt-1"></p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Why do you want to join the Academy?</label>
+                        <textarea id="description" rows="3" placeholder="Tell us about your goals..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition"></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button id="submitBtn" type="submit" class="w-full bg-orange-500 text-white py-5 rounded-2xl font-bold text-lg hover:bg-orange-600 transition shadow-lg shadow-orange-500/30 flex items-center justify-center space-x-3">
+                            <span>Submit Registration</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button> 
+						<!--<button id="submitBtn" type="submit" class="w-full bg-blue-900 text-white p-3 rounded-2xl hover:bg-blue-800 transition">
+                    Submit Registration
+                </button>-->
+                        <p class="text-center text-slate-400 text-xs mt-4">
+                            By clicking initialize, you agree to our terms of service and code of conduct.
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+	<!-- WhatsApp CTA -->
+<a href="https://wa.me/2348066439570"
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition">
+
+    <!-- WhatsApp SVG Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+         viewBox="0 0 24 24">
+        <path d="M20.52 3.48A11.8 11.8 0 0012.05 0C5.47 0 .13 5.34.13 11.92c0 2.1.55 4.15 1.6 5.96L0 24l6.28-1.64a11.9 11.9 0 005.77 1.47h.01c6.58 0 11.92-5.34 11.92-11.92a11.8 11.8 0 00-3.46-8.43zM12.06 21.5c-1.78 0-3.52-.48-5.05-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.42 9.42 0 01-1.44-5.02c0-5.2 4.23-9.43 9.43-9.43 2.52 0 4.88.98 6.66 2.77a9.35 9.35 0 012.77 6.66c0 5.2-4.23 9.43-9.42 9.43zm5.17-7.05c-.28-.14-1.65-.82-1.91-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.9 1.1-.17.19-.34.21-.62.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.4-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.31.42-.47.14-.17.19-.28.28-.47.09-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.36-.26.28-1 1-1 2.43 0 1.43 1.03 2.82 1.17 3.02.14.19 2.02 3.08 4.9 4.32.68.29 1.21.47 1.63.6.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.64.23-1.19.16-1.32-.07-.14-.26-.21-.55-.36z"/>
+    </svg>
+</a>
+    <footer class="bg-slate-900 text-white py-12 px-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-sm text-slate-500">
+                &copy; 2026 Public class Academy. Commit code, build value.
+            </div>
+            <div class="flex space-x-6 text-slate-400">
+                <a href="#" class="hover:text-orange-500"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-orange-500"><i class="fa-brands fa-facebook text-xl"></i></a>
+				<a href="#" class="hover:text-orange-500"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-orange-500"><i class="fa-brands fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+	
+		<script>
+const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const toggleMenu = () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+	
+function clearErrors() {
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("phoneError").innerText = "";
+    document.getElementById("levelError").innerText = "";
+}
+const form = document.getElementById("registrationForm");
+const button = document.getElementById("submitBtn");
+const successMessage = document.getElementById("successMessage");
+console.log("test1");
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+	clearErrors();
+console.log("test2");
+    // Collect form data
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        level: document.getElementById("level").value,
+		description: document.getElementById("description").value.trim(),
+		course:"Java-Backend"
+		
+    };
+
+    // UI loading state
+    button.innerText = "Submitting...";
+    button.disabled = true;
+
+
+    try {
+        const response = await fetch("http://localhost:8080/api/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+		
+		const result = await response.json(); // Apps Script must return JSON
+
+		
+		    if (result.status === "success") {
+            successMessage.classList.remove("hidden");
+            form.reset();
+        } else if (result.errors) {
+            // 👇 Display field errors
+            Object.keys(result.errors).forEach(field => {
+                const errorElement = document.getElementById(field + "Error");
+                if (errorElement) {
+                    errorElement.innerText = result.errors[field];
+                }
+            });
+        } else {
+            alert("Something went wrong");
+        }
+		
+		
+    } catch (error) {
+	console.log(error);
+        alert("Error submitting form");
+    }
+//});
+
+    // Reset button
+    button.innerText = "Submit Registration";
+    button.disabled = false;
+});
+</script>
+
+</body>
+</html>

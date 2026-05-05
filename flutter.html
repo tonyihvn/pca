@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Engineering Academy | Master Flutter & Dart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-slate-900 font-sans">
+
+    <!-- <nav class="flex items-center justify-between px-10 py-5 bg-slate-900 text-white sticky top-0 z-50">
+        <div class="text-1xl font-mono font-bold tracking-tighter">
+            <a href="index.html"><span class="text-cyan-400">public class</span> Academy {}</a>
+        </div>
+        <div class="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest">
+            <a href="#curriculum" class="hover:text-cyan-400 transition">Curriculum</a>
+            <a href="#overview" class="hover:text-cyan-400 transition">Program Overview</a>
+            <a href="#mentor" class="hover:text-cyan-500 transition">Mentorship</a>
+        </div>
+        <a href="#enroll" class="border-2 border-cyan-400 text-cyan-400 px-6 py-2 rounded-md font-bold hover:bg-cyan-400 hover:text-white transition">Apply Now</a>
+    </nav> -->
+		<!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 md:px-10 py-5 bg-slate-900 text-white sticky top-0 z-50">
+        <div class="text-lg sm:text-xl md:text-2xl font-mono font-bold tracking-tighter">
+            <a href="index.html"><span class="text-cyan-500">public class</span> Academy {}</a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest">
+			<a href="index.html" class="nav-link hover:text-cyan-500">Home</a>
+            <a href="#curriculum" class="hover:text-cyan-500 transition">Curriculum</a>
+            <a href="#overview" class="hover:text-cyan-500 transition">Program Overview</a>
+            <a href="#mentor" class="hover:text-cyan-500 transition">Mentorship</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a href="#enroll" class="hidden sm:block border-2 border-cyan-500 text-cyan-500 px-6 py-2 rounded-md font-bold hover:bg-cyan-500 hover:text-white transition">Apply Now</a>
+            
+            <!-- Hamburger Button -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-900 z-[60] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8 text-xl font-bold uppercase tracking-widest">
+            <button id="menu-close" class="absolute top-6 right-8 text-white">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+            <a href="index.html" class="nav-link hover:text-cyan-500">Home</a>
+            <a href="#curriculum" class="nav-link hover:text-cyan-500 transition">Curriculum</a>
+            <a href="#overview" class="nav-link hover:text-cyan-500 transition">Program Overview</a>
+            <a href="#mentor" class="nav-link hover:text-cyan-500 transition">Mentorship</a>
+        </div>
+    </nav>
+
+    <header class="bg-slate-900 text-white pt-20 pb-32 px-10 border-b-8 border-cyan-500">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-3/5 space-y-8">
+                <div class="inline-block px-4 py-1 bg-cyan-500/20 text-cyan-400 rounded text-xs font-bold uppercase tracking-widest">
+                    5-Year Flutter Engineer Led
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    Build Once. <br><span class="text-cyan-400">Deploy Everywhere.</span>
+                </h1>
+                <p class="text-xl text-slate-400 max-w-xl font-light leading-relaxed">
+                    Master Dart and Flutter to build high-performance, beautiful native apps for iOS and Android from a single codebase.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#curriculum" class="inline-block bg-cyan-500 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-cyan-500/30 hover:bg-cyan-600 hover:-translate-y-1 transition-all duration-300 ease-out">
+                        <div class="flex items-center space-x-2">
+                            <span>View Roadmap</span>
+                            <i class="fa-solid fa-mobile-screen-button text-sm"></i>
+                        </div>
+                    </a> 
+                    <div class="flex items-center space-x-4 grayscale opacity-50">
+                        <i class="fa-brands fa-apple text-4xl"></i>
+                        <i class="fa-brands fa-android text-4xl"></i>
+                        <i class="fa-brands fa-google text-4xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block md:w-2/5 font-mono text-xs bg-slate-800 p-6 rounded-lg border border-slate-700 shadow-2xl">
+                <p class="text-green-400">// Flutter UI logic</p>
+                <p class="text-purple-400">class</p> <p class="inline text-yellow-200">FlutterApp</p> <p class="inline text-blue-300">extends</p> StatelessWidget {
+                <div class="pl-4 mt-2">
+                    <p class="text-purple-400">@override</p>
+                    <p class="text-blue-300">Widget</p> <span class="text-yellow-200">build</span>(BuildContext context) {
+                    <p class="pl-4 text-slate-400">return MaterialApp(</p>
+                    <p class="pl-8 text-slate-400">home: DashboardScreen(),</p>
+                    <p class="pl-4 text-slate-400">);</p>
+                    }
+                </div>
+                <p>}</p>
+            </div>
+        </div>
+    </header>
+	    <section id="enroll" class="py-24 bg-slate-50 px-6">
+        <div class="max-w-4xl mx-auto border-2 border-slate-100 rounded-3xl shadow-2xl bg-white overflow-hidden"> 
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-3/5 p-10"> 
+					<div class="flex items-center space-x-2 text-cyan-600 font-bold mb-6">
+						<i class="fa-solid fa-calendar-check"></i>
+						<span class="uppercase tracking-widest text-xs">Enrollment Open</span>
+					</div>
+                
+                <!--<h2 class="text-3xl font-bold text-slate-900 mb-2">Next Cohort Starts:</h2>
+                <p class="text-2xl font-mono text-slate-700 mb-8">April 2026 <span class="text-sm font-sans text-slate-400 font-normal">(Virtual Class)</span></p>
+    
+                    <p class="text-slate-600 mb-8">This program includes a capstone project where you build and publish a real-world FinTech mobile wallet or E-commerce app.</p> -->
+                    <div class="space-y-4">
+					<h2 class="text-3xl font-bold text-slate-900 mb-2">Next Cohort Starts:</h2>
+					<p class="text-2xl font-mono text-slate-700 mb-8">June 2026 <span class="text-sm font-sans text-slate-400 font-normal">(Virtual Class)</span></p>
+
+                        
+                        <div class="flex items-center space-x-3 text-slate-700 font-medium">
+                            <i class="fa-solid fa-users text-cyan-500"></i>
+                            <span>Small Groups (20 Seats Max)</span>
+                        </div>
+						<ul class="space-y-4">
+                    <li class="flex items-start space-x-3 text-slate-600">
+                        <i class="fa-solid fa-circle-check text-cyan-500 mt-1"></i>
+                        <span><strong>4 Months Intensive Training:</strong> Deep dive into distributed systems.</span>
+                    </li>
+                    <li class="flex items-start space-x-3 text-slate-600">
+                        <i class="fa-solid fa-circle-check text-cyan-500 mt-1"></i>
+                        <span><strong>Capstone Project:</strong> Build a production-grade E-commerce, Fintech, Restaurant and Uber like App.</span>
+                    </li>
+                    <li class="flex items-start space-x-3 text-slate-600">
+                        <i class="fa-solid fa-circle-check text-cyan-500 mt-1"></i>
+                        <span><strong>Career Support:</strong> Professional CV & Interview Prep sessions.</span>
+                    </li>
+                    <li class="flex items-start space-x-3 text-slate-600">
+                        <i class="fa-solid fa-circle-check text-cyan-500 mt-1"></i>
+                        <span><strong>Direct Pipeline:</strong> Top performers qualify for Internship Opportunities.</span>
+                    </li>
+                </ul>
+                    </div>
+                </div>
+                <div class="md:w-2/5 p-10 bg-slate-900 text-white flex flex-col justify-center items-center text-center">
+                    <p class="text-slate-400 uppercase tracking-widest text-xs font-bold mb-2">Investment</p>
+					<div class="text-5xl font-bold text-cyan-500 mb-2">N250,000</div>
+					<p class="text-slate-400 text-sm mb-8 leading-relaxed">Includes all course materials, <br>mentorship, and certificate.</p>
+                    
+                    <!--<button class="w-full bg-cyan-500 text-white py-4 rounded-lg font-bold hover:bg-cyan-600 transition shadow-lg shadow-cyan-500/20">Secure Your Seat</button>-->
+					<a href="#register" class="inline-block bg-cyan-500 text-white px-16 py-4 rounded-xl font-bold shadow-lg shadow-cyan-500/30 hover:bg-cyan-600 hover:-translate-y-1 transition-all duration-300 ease-out active:scale-95 focus:ring-4 focus:ring-cyan-500/20 outline-none">
+						<div class="flex items-center space-x-2">
+							<span>Secure Your Spot</span>
+							<i class="fa-solid fa-arrow-down text-sm"></i>
+						</div>
+					</a>
+					<p class="text-slate-400 text-sm mb-8">Flexible payment plan available</p>
+				</div>
+            </div>
+        </div>
+    </section>
+	
+	<section id="overview" class="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <span class="uppercase tracking-widest text-orange-500 text-xs font-bold px-3 py-1 bg-cyan-500/10 rounded">Program Overview</span>
+        <h2 class="text-4xl md:text-5xl font-bold mt-6 tracking-tight">Bridge the gap between <br><span class="text-green-500">Code and Engineering</span></h2>
+		<p class="mt-8 text-lg max-w-3xl mx-auto text-slate-400 leading-relaxed font-light">This program is designed to take learners from beginner level to advanced mobile app development using modern tools and industry best practices.
+
+You will start by mastering <strong>Dart programming</strong> fundamentals, then progress into building beautiful, responsive mobile applications using <strong>Flutter</strong>. The program focuses on hands-on learning through real-world projects, enabling students to gain practical experience in designing, developing, and deploying mobile apps for both <strong>Android and iOS.</strong></p>
+    </div>
+
+    <!-- Bottom Divider -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,224L80,213.3C160,203,320,181,480,170.7C640,160,800,160,960,181.3C1120,203,1280,245,1360,266.7L1440,288L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            </s
+    </div>
+</section>
+	<!--<section id="overview" class="py-32 bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="flex flex-col lg:flex-row gap-16 items-center mb-24">
+            <div class="lg:w-1/2 space-y-6">
+                <span class="text-cyan-600 font-bold uppercase tracking-[0.2em] text-xs px-3 py-1 bg-cyan-50 rounded-full">
+                    The Curriculum Blueprint
+                </span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    More than just <br><span class="text-cyan-500">Writing Widgets.</span>
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed font-light">
+                    Most courses teach you how to build a UI. We teach you how to build a **production-grade mobile product**. This program is an intensive 6-month journey into the architectural patterns used by teams at top-tier organizations.
+                </p>
+                
+                <div class="pt-4 grid grid-cols-2 gap-6">
+                    <div class="border-l-2 border-slate-100 pl-4">
+                        <div class="text-2xl font-bold text-slate-900">24</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-500 font-bold">Deep-Dive Modules</div>
+                    </div>
+                    <div class="border-l-2 border-slate-100 pl-4">
+                        <div class="text-2xl font-bold text-slate-900">120+</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-500 font-bold">Lab Hours</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-cyan-500/5 transition-all">
+                    <i class="fa-solid fa-microchip text-cyan-500 text-2xl mb-4"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">Architecture First</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Master Clean Architecture, DDD, and SOLID principles applied to Flutter.</p>
+                </div>
+                <div class="p-6 bg-slate-900 text-white rounded-2xl shadow-2xl">
+                    <i class="fa-solid fa-shield-halved text-cyan-400 text-2xl mb-4"></i>
+                    <h4 class="font-bold mb-2">Fintech Grade</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Learn secure storage, biometrics, and heavy-duty API encryption.</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-cyan-500/5 transition-all">
+                    <i class="fa-solid fa-vial-circle-check text-cyan-500 text-2xl mb-4"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">Testing & CI/CD</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Automate your delivery with Golden Tests and GitHub Actions.</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-cyan-500/5 transition-all">
+                    <i class="fa-solid fa-code-branch text-cyan-500 text-2xl mb-4"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">State Mastery</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Deep dive into Riverpod and BLoC for predictable data flow.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section> -->
+<section id="curriculum" class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">The Mastery Roadmap</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-lg">A 4-month intensive designed to take you from syntax to storefront. No fluff—just engineering excellence.</p>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition-all group">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/4">
+                        <div class="text-cyan-500 font-mono text-sm mb-2 font-bold tracking-widest uppercase">Module 01</div>
+                        <h3 class="text-2xl font-bold text-slate-900 leading-tight">Dart Programming</h3>
+                        <p class="text-slate-500 text-sm mt-2">Learn the foundation of programming using Dart, the language behind Flutter..</p>
+                    </div>
+                    <div class="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <ul class="space-y-3 text-slate-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-500 text-xs"></i> Understanding Dart syntax and structure</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-500 text-xs"></i> Variables, data types, and operators</li>
+							<li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-500 text-xs"></i> Control flow (if/else, loops, switch)</li>
+							<li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-500 text-xs"></i> Functions and reusable code</li>
+							<li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-500 text-xs"></i> Writing clean, readable, and maintainable code</li>
+                        </ul>
+                        <ul class="space-y-3 text-slate-700">
+							<li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-500 text-xs"></i> Object-Oriented Programming (classes, inheritance, polymorphism)</li>
+							<li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-500 text-xs"></i> Working with collections (List, Map, Set)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-500 text-xs"></i> Asynchronous programming </li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-500 text-xs"></i> Error and exception handling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 text-white border border-slate-800 rounded-3xl p-8 hover:shadow-2xl transition-all shadow-cyan-500/10">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/4">
+                        <div class="text-cyan-400 font-mono text-sm mb-2 font-bold tracking-widest uppercase">Module 02</div>
+                        <h3 class="text-2xl font-bold leading-tight">Flutter Development</h3>
+                        <p class="text-slate-400 text-sm mt-2">Build modern, responsive mobile apps using Flutter’s powerful UI system.</p>
+                    </div>
+                    <div class="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Understanding Flutter architecture and widget system</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Building UI with Stateless and Stateful widgets</li>
+							<li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Layout design </li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Navigation and routing between screens</li>
+                        </ul>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Responsive design for different devices</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Theming and custom styling</li>
+							<li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> State management</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Backend & API integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition-all">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/4">
+                        <div class="text-cyan-500 font-mono text-sm mb-2 font-bold tracking-widest uppercase">Module 03</div>
+                        <h3 class="text-2xl font-bold text-slate-900 leading-tight">Local Storage</h3>
+                        <p class="text-slate-500 text-sm mt-2">Store and manage data directly on the device.</p>
+                    </div>
+                    <div class="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <ul class="space-y-3 text-slate-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-code-branch text-cyan-500 text-xs"></i> SharedPreferences</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-code-branch text-cyan-500 text-xs"></i> SQLite</li>
+                        </ul>
+                        <ul class="space-y-3 text-slate-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-code-branch text-cyan-500 text-xs"></i> Offline data handling)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+			<div class="bg-slate-900 text-white border border-slate-800 rounded-3xl p-8 hover:shadow-2xl transition-all shadow-cyan-500/10">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/4">
+                        <div class="text-cyan-400 font-mono text-sm mb-2 font-bold tracking-widest uppercase">Module 04</div>
+                        <h3 class="text-2xl font-bold leading-tight">Firebase</h3>
+                        <p class="text-slate-400 text-sm mt-2">Build, manage, and scale mobile applications without needing to manage servers.</p>
+                    </div>
+                    <div class="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Firebase Basics</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Authentication</li>
+							<li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Cloud Functions</li>
+						</ul>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Cloud Firestore / Realtime Database</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Cloud Storage</li>
+							<li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Firebase Analytics & Monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+			
+            <div class="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition-all">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/4">
+                        <div class="text-cyan-500 font-mono text-sm mb-2 font-bold tracking-widest uppercase">Module 05</div>
+                        <h3 class="text-2xl font-bold text-slate-900 leading-tight">Tools & Development</h3>
+                        <p class="text-slate-500 text-sm mt-2">Use industry-standard tools to build and manage your apps..</p>
+                    </div>
+                    <div class="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <ul class="space-y-3 text-slate-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-rocket text-cyan-500 text-xs"></i> Flutter SDK</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-rocket text-cyan-500 text-xs"></i> Android Studio / Visual Studio Code</li>
+                        </ul>
+                        <ul class="space-y-3 text-slate-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-rocket text-cyan-500 text-xs"></i> Git & GitHub</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-rocket text-cyan-500 text-xs"></i> Debugging and performance tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="bg-slate-900 text-white border border-slate-800 rounded-3xl p-8 hover:shadow-2xl transition-all shadow-cyan-500/10">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/4">
+                        <div class="text-cyan-400 font-mono text-sm mb-2 font-bold tracking-widest uppercase">Module 06</div>
+                        <h3 class="text-2xl font-bold leading-tight">Deployment</h3>
+                        <p class="text-slate-400 text-sm mt-2">Prepare and publish your apps for real users</p>
+                    </div>
+                    <div class="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Build APK files</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> Google Play Store submission</li>
+                        </ul>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> iOS App Store deployment</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-screen text-cyan-400 text-xs"></i> App signing and versioning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="overview" class="py-24 bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="flex flex-col lg:flex-row gap-16 items-center mb-24">
+            <div class="lg:w-1/2 space-y-6">
+                <span class="text-cyan-600 font-bold uppercase tracking-[0.2em] text-xs px-3 py-1 bg-cyan-50 rounded-full">
+                    The Engineering Philosophy
+                </span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    Beyond the <br><span class="text-cyan-500">Counter App.</span>
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed font-light">
+                    Most bootcamps teach you how to build a basic UI. We teach you how to build <strong>production-grade mobile products</strong>. This 4-month intensive is designed to turn you into a specialist who understands the entire lifecycle of a mobile application—from high-fidelity UI to complex state synchronization and native OS integration.
+                </p>
+                
+                <div class="pt-4 grid grid-cols-2 gap-6">
+                    <div class="border-l-2 border-slate-100 pl-4">
+                        <div class="text-2xl font-bold text-slate-900">4</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-500 font-bold">Guided Projects</div>
+                    </div>
+                    <div class="border-l-2 border-slate-100 pl-4">
+                        <div class="text-2xl font-bold text-slate-900">Production</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-500 font-bold">Capstone Focus</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-cyan-500/5 transition-all">
+                    <i class="fa-solid fa-wand-magic-sparkles text-cyan-500 text-2xl mb-4"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">Advanced UI/UX</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Master Implicit & Explicit animations and custom Canvas painting for premium experiences.</p>
+                </div>
+                <div class="p-6 bg-slate-900 text-white rounded-2xl shadow-2xl">
+                    <i class="fa-solid fa-code-merge text-cyan-400 text-2xl mb-4"></i>
+                    <h4 class="font-bold mb-2">Single Source of Truth</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">App data should come from one reliable place.</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-cyan-500/5 transition-all">
+                    <i class="fa-solid fa-bolt-lightning text-cyan-500 text-2xl mb-4"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">Composition Over Inheritance</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Build UI by combining small widgets instead of creating large complex ones.</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-cyan-500/5 transition-all">
+                    <i class="fa-solid fa-link text-cyan-500 text-2xl mb-4"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">Separation of Concerns</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Keep UI, business logic, and data layers separate.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+	
+ <!--   <section id="curriculum" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-cyan-500 font-bold uppercase tracking-[0.2em] text-xs">The Roadmap</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mt-3">From Scratch to App Store</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                    <div class="w-12 h-12 bg-cyan-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">01. Dart Mastery</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Asynchronous programming, Streams, Mixins, and Sound Null Safety — the backbone of any Flutter app.</p>
+                    <ul class="space-y-2 text-xs font-bold text-slate-500 uppercase tracking-wide">
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Functional Programming</li>
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Isolates & Concurrency</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-slate-900 text-white rounded-3xl border border-slate-800">
+                    <div class="w-12 h-12 bg-white text-slate-900 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">02. State Management</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Building reactive UIs using Riverpod, BLoC, or Provider. Learn to manage complex app states at scale.</p>
+                    <ul class="space-y-2 text-xs font-bold text-cyan-400 uppercase tracking-wide">
+                        <li><i class="fa-solid fa-check mr-2"></i> Clean Architecture</li>
+                        <li><i class="fa-solid fa-check mr-2"></i> Reactive Patterns</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                    <div class="w-12 h-12 bg-cyan-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">03. Publish & Go Live</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">API integration, Firebase, Local DBs and deploying to the App Store and Play Store.</p>
+                    <ul class="space-y-2 text-xs font-bold text-slate-500 uppercase tracking-wide">
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> CI/CD with Codemagic</li>
+                        <li><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Store Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> -->
+	
+	<section id="mentor" class="py-24 bg-slate-100 px-10">
+		<!-- <section id="tutor" class="py-32 bg-white relative overflow-hidden">-->
+<!--<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>-->
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center gap-16">
+            
+            <div class="md:w-1/2 relative">
+                <div class="relative z-10 w-full aspect-square max-w-md mx-auto group">
+                    <div class="absolute inset-0 border-2 border-cyan-500 rounded-2xl translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+                    
+                    <img src="academy_image.jpeg" 
+                         alt="Tayo Oyelekan" 
+                         class="w-full h-full object-cover rounded-2xl shadow-2xl">
+                    
+                    <div class="absolute -bottom-6 -right-6 bg-slate-900 text-white p-6 rounded-xl shadow-xl hidden lg:block">
+                        <div class="flex items-center space-x-3">
+                            <div class="text-cyan-500 text-2xl font-bold italic">10+</div>
+                            <div class="text-[10px] uppercase tracking-widest leading-tight text-slate-400">Years of<br>Production Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-1/2">
+                <div class="inline-block px-3 py-1 bg-cyan-500/10 text-cyan-600 rounded text-xs font-bold uppercase tracking-[0.2em] mb-6">
+                    Lead Instructor
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    Tayo Oyelekan
+                </h2>
+                <p class="text-xl text-slate-500 font-mono mt-2">Senior Software Engineer</p>
+
+                <p class="mt-8 text-slate-600 leading-relaxed text-lg">
+                    With over a decade of experience engineering scalable systems across <strong>Fintech, Healthtech, Edutech, Social Media and Biometrics</strong>, Tayo has architected high-throughput solutions for industry giants including <span class="text-slate-900 font-semibold">Moniepoint Group, Institue of Human Virology Nigeria, GoalSpaces USA, and Biosec Solutions among others</span>. 
+                </p>
+                
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                    He doesn't just teach syntax—he mentors you in the <strong>professional-grade architecture</strong> required to thrive in multinational engineering teams.
+                </p>
+
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3 text-slate-700">
+                        <i class="fa-solid fa-check-double text-cyan-500"></i>
+                        <span class="text-sm font-medium">Spring Boot & Microservices Expert</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-700">
+                        <i class="fa-solid fa-check-double text-cyan-500"></i>
+                        <span class="text-sm font-medium">AWS Cloud Architecture</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-700">
+                        <i class="fa-solid fa-check-double text-cyan-500"></i>
+                        <span class="text-sm font-medium">Docker & Kubernetes Mastery</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-700">
+                        <i class="fa-solid fa-check-double text-cyan-500"></i>
+                        <span class="text-sm font-medium">Mentored 50+ Developers</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 flex items-center space-x-6">
+                    <!--<a href="#enroll" class="bg-slate-900 text-white px-10 py-4 rounded-xl font-bold shadow-xl hover:bg-slate-800 transition-all hover:-translate-y-1">
+                        Secure Your Spot
+                    </a> -->
+                    <a href="https://linkedin.com/in/..." target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
+                        <i class="fa-brands fa-linkedin text-3xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="register" class="py-32 bg-slate-900 text-white relative">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+    
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-16 items-start">
+            
+            <div class="lg:w-5/12 space-y-8">
+                <div>
+                    <h2 class="text-4xl font-extrabold tracking-tight mb-4">
+                        Begin Your <span class="text-cyan-500">Mastery</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg leading-relaxed font-light">
+                        Join the May 2026 cohort. This is an intensive 4-month commitment designed for beginners ready to transition into dart and flutter development.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-500">
+                            <i class="fa-solid fa-lock text-sm"></i>
+                        </div>
+                        <p class="text-sm text-slate-300">Secure your spot with a N50,000 deposit.</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-500">
+                            <i class="fa-solid fa-credit-card text-sm"></i>
+                        </div>
+                        <p class="text-sm text-slate-300">Flexible 3-month payment plans available.</p>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-800/50 border border-slate-700 rounded-2xl">
+                    <p class="text-xs text-slate-500 uppercase tracking-widest mb-2 font-bold">Limited Capacity</p>
+                    <p class="text-slate-300 text-sm">Only 20 slots available per cohort to ensure high-quality mentorship and direct code reviews.</p>
+                </div>
+            </div>
+
+            <div class="lg:w-7/12 w-full bg-white rounded-3xl p-8 md:p-12 shadow-2xl text-slate-900">
+				<div id="successMessage" class="hidden bg-green-100 text-green-800 p-4 rounded-xl mb-6 text-center">
+                Registration submitted successfully! Our team will contact you shortly.
+            </div>
+                <form  id="registrationForm"  class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Full Name</label>
+                            <input id="name" type="text" placeholder="John Doe" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition">
+							<p id="nameError" class="text-red-500 text-sm mt-1"></p>
+						</div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Email Address</label>
+                            <input id="email" type="email" placeholder="john@example.com" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition">
+							<p id="emailError" class="text-red-500 text-sm mt-1"></p>
+						</div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Phone Number</label>
+                            <input id="phone" type="tel" placeholder="+234..." required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition">
+							<p id="phoneError" class="text-red-500 text-sm mt-1"></p>
+						</div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Experience Level</label>
+                            <select id="level" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition appearance-none">
+                                <option>Beginner</option>
+                                <option>Intermediate</option>
+                                <option>Senior</option>
+                            </select>
+							<p id="levelError" class="text-red-500 text-sm mt-1"></p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Why do you want to join the Academy?</label>
+                        <textarea id="description" rows="3" placeholder="Tell us about your goals..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition"></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button id="submitBtn" type="submit" class="w-full bg-cyan-500 text-white py-5 rounded-2xl font-bold text-lg hover:bg-cyan-600 transition shadow-lg shadow-cyan-500/30 flex items-center justify-center space-x-3">
+                            <span>Submit Registration</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button> 
+						<!--<button id="submitBtn" type="submit" class="w-full bg-blue-900 text-white p-3 rounded-2xl hover:bg-blue-800 transition">
+                    Submit Registration
+                </button>-->
+                        <p class="text-center text-slate-400 text-xs mt-4">
+                            By clicking initialize, you agree to our terms of service and code of conduct.
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+		<!-- WhatsApp CTA -->
+<a href="https://wa.me/2348066439570"
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition">
+
+    <!-- WhatsApp SVG Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+         viewBox="0 0 24 24">
+        <path d="M20.52 3.48A11.8 11.8 0 0012.05 0C5.47 0 .13 5.34.13 11.92c0 2.1.55 4.15 1.6 5.96L0 24l6.28-1.64a11.9 11.9 0 005.77 1.47h.01c6.58 0 11.92-5.34 11.92-11.92a11.8 11.8 0 00-3.46-8.43zM12.06 21.5c-1.78 0-3.52-.48-5.05-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.42 9.42 0 01-1.44-5.02c0-5.2 4.23-9.43 9.43-9.43 2.52 0 4.88.98 6.66 2.77a9.35 9.35 0 012.77 6.66c0 5.2-4.23 9.43-9.42 9.43zm5.17-7.05c-.28-.14-1.65-.82-1.91-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.9 1.1-.17.19-.34.21-.62.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.4-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.31.42-.47.14-.17.19-.28.28-.47.09-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.36-.26.28-1 1-1 2.43 0 1.43 1.03 2.82 1.17 3.02.14.19 2.02 3.08 4.9 4.32.68.29 1.21.47 1.63.6.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.88-1.32.23-.64.23-1.19.16-1.32-.07-.14-.26-.21-.55-.36z"/>
+    </svg>
+</a>
+
+
+    <footer class="bg-slate-900 text-white py-12 px-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-sm text-slate-500">
+                &copy; 2026 Public class Academy. Commit code, build value.
+            </div>
+            <div class="flex space-x-6 text-slate-400">
+                <a href="#" class="hover:text-cyan-500"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-cyan-500"><i class="fa-brands fa-facebook text-xl"></i></a>
+				<a href="#" class="hover:text-cyan-500"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-cyan-500"><i class="fa-brands fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+
+const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const toggleMenu = () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });	
+	
+function clearErrors() {
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("phoneError").innerText = "";
+    document.getElementById("levelError").innerText = "";
+}
+const form = document.getElementById("registrationForm");
+const button = document.getElementById("submitBtn");
+const successMessage = document.getElementById("successMessage");
+console.log("test1");
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+	clearErrors();
+console.log("test2");
+    // Collect form data
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        level: document.getElementById("level").value,
+		description: document.getElementById("description").value.trim(),
+		course:"Flutter"
+		
+    };
+
+    // UI loading state
+    button.innerText = "Submitting...";
+    button.disabled = true;
+
+
+    try {
+        const response = await fetch("http://localhost:8080/api/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+		
+		const result = await response.json(); // Apps Script must return JSON
+
+		
+		    if (result.status === "success") {
+            successMessage.classList.remove("hidden");
+            form.reset();
+        } else if (result.errors) {
+            // 👇 Display field errors
+            Object.keys(result.errors).forEach(field => {
+                const errorElement = document.getElementById(field + "Error");
+                if (errorElement) {
+                    errorElement.innerText = result.errors[field];
+                }
+            });
+        } else {
+            alert("Something went wrong");
+        }
+		
+		
+    } catch (error) {
+	console.log(error);
+        alert("Error submitting form");
+    }
+//});
+
+    // Reset button
+    button.innerText = "Submit Registration";
+    button.disabled = false;
+});
+</script>
+</body>
+</html>
