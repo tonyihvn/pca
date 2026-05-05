@@ -587,15 +587,15 @@ console.log("test2");
             },
             body: JSON.stringify(data)
         });
-		
-		const result = await response.json(); // Apps Script must return JSON
 
-		
-		    if (result.status === "success") {
+        let result;
+        try { result = await response.json(); }
+        catch (_) { result = { status: "error", message: "Server returned an invalid response (HTTP " + response.status + ")." }; }
+
+        if (response.ok && result.status === "success") {
             successMessage.classList.remove("hidden");
             form.reset();
         } else if (result.errors) {
-            // 👇 Display field errors
             Object.keys(result.errors).forEach(field => {
                 const errorElement = document.getElementById(field + "Error");
                 if (errorElement) {
@@ -603,13 +603,11 @@ console.log("test2");
                 }
             });
         } else {
-            alert("Something went wrong");
+            alert(result.message || "Submission failed. Please try again.");
         }
-		
-		
     } catch (error) {
-	console.log(error);
-        alert("Error submitting form");
+        console.log(error);
+        alert("Network error: could not reach the server. Please check your connection.");
     }
 //});
 

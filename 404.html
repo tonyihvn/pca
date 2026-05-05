@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Public Class Academy</title>
+    <meta name="robots" content="noindex,nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col">
+
+    <!-- Top bar -->
+    <nav class="px-6 md:px-10 py-5 flex items-center justify-between border-b border-slate-800">
+        <a href="/index.html" class="text-lg sm:text-xl md:text-2xl font-mono font-bold tracking-tighter">
+            <span class="text-orange-500">public class</span> Academy {}
+        </a>
+        <a href="/index.html" class="text-sm text-slate-400 hover:text-orange-500 transition">
+            <i class="fa-solid fa-arrow-left mr-1"></i> Back to home
+        </a>
+    </nav>
+
+    <!-- Main -->
+    <main class="flex-1 flex items-center justify-center px-6 py-20">
+        <div class="max-w-2xl w-full text-center">
+
+            <!-- Glitchy 404 -->
+            <div class="relative inline-block mb-8">
+                <h1 class="text-[8rem] md:text-[12rem] font-extrabold leading-none tracking-tighter
+                           bg-gradient-to-br from-orange-500 via-pink-500 to-cyan-400
+                           bg-clip-text text-transparent">
+                    404
+                </h1>
+                <div class="absolute inset-0 flex items-center justify-center opacity-10">
+                    <i class="fa-solid fa-triangle-exclamation text-9xl"></i>
+                </div>
+            </div>
+
+            <div class="font-mono text-xs text-slate-500 mb-4">
+                <span class="text-cyan-400">throw new</span>
+                <span class="text-yellow-300">PageNotFoundException</span>(<span class="text-green-400">"route undefined"</span>);
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">This page does not exist.</h2>
+            <p class="text-slate-400 leading-relaxed mb-10 max-w-md mx-auto">
+                The link you followed may be broken, or the page may have been moved.
+                Let&rsquo;s get you back on track.
+            </p>
+
+            <!-- Quick links -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-left">
+                <a href="/index.html" class="group p-5 bg-slate-800/50 border border-slate-700 rounded-2xl hover:border-orange-500 transition">
+                    <div class="text-orange-500 mb-2"><i class="fa-solid fa-house"></i></div>
+                    <div class="font-bold mb-1">Home</div>
+                    <div class="text-xs text-slate-400">All programs and overview</div>
+                </a>
+                <a href="/java-backend.html" class="group p-5 bg-slate-800/50 border border-slate-700 rounded-2xl hover:border-orange-500 transition">
+                    <div class="text-orange-500 mb-2"><i class="fa-brands fa-java"></i></div>
+                    <div class="font-bold mb-1">Java Backend</div>
+                    <div class="text-xs text-slate-400">Master enterprise systems</div>
+                </a>
+                <a href="/flutter.html" class="group p-5 bg-slate-800/50 border border-slate-700 rounded-2xl hover:border-cyan-500 transition">
+                    <div class="text-cyan-500 mb-2"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <div class="font-bold mb-1">Flutter</div>
+                    <div class="text-xs text-slate-400">Build cross-platform apps</div>
+                </a>
+            </div>
+
+            <a href="/index.html"
+               class="inline-block bg-orange-500 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-1 transition-all duration-300">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Take me home
+            </a>
+
+            <p class="text-xs text-slate-600 mt-10">
+                Still stuck? <a href="/contact-us.html" class="text-orange-500 hover:underline">Contact our team</a>.
+            </p>
+        </div>
+    </main>
+
+    <footer class="text-center text-xs text-slate-600 py-6 border-t border-slate-800">
+        &copy; 2026 Public Class Academy
+    </footer>
+</body>
+</html>
