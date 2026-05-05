@@ -1,0 +1,30 @@
+# pcadmin/.htaccess
+# Allow only the explicit pages. Block any other PHP file accidentally
+# placed here (backups, includes, etc.).
+
+DirectoryIndex index.php
+
+<FilesMatch "\.php$">
+    Require all denied
+</FilesMatch>
+
+<Files "login.php">
+    Require all granted
+</Files>
+<Files "logout.php">
+    Require all granted
+</Files>
+<Files "index.php">
+    Require all granted
+</Files>
+<Files "contacts.php">
+    Require all granted
+</Files>
+
+# Deny sensitive file types
+<FilesMatch "\.(sql|md|log|env|ini|sample\.php|bak|old)$">
+    Require all denied
+</FilesMatch>
+
+# Disable directory listing
+Options -Indexes

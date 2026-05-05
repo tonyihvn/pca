@@ -1,0 +1,20 @@
+# api/.htaccess
+# Allow only the explicit endpoint files. Any other .php in this folder
+# (or accidental backups, includes, etc.) is denied.
+
+<FilesMatch "\.php$">
+    Require all denied
+</FilesMatch>
+
+<Files "register.php">
+    Require all granted
+</Files>
+
+<Files "contact.php">
+    Require all granted
+</Files>
+
+# Block sensitive file types just in case
+<FilesMatch "\.(sql|sample\.php|md|log|env|ini|bak|old)$">
+    Require all denied
+</FilesMatch>

@@ -1,0 +1,39 @@
+# ============================================================
+# Root .htaccess — global hardening for the academy site
+# ============================================================
+
+# --- Disable directory listings ---
+Options -Indexes
+
+# --- Default index files ---
+DirectoryIndex index.html index.php
+
+# --- Block access to sensitive file types ---
+<FilesMatch "(^\.|\.(sql|md|log|env|ini|sample\.php|bak|old|sh|yml|yaml|lock|json|gitignore|gitattributes))$">
+    Require all denied
+</FilesMatch>
+
+# --- Block hidden files / directories (.git, .env, etc.) ---
+RedirectMatch 404 /\..*$
+
+# --- Security headers ---
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+</IfModule>
+
+# --- Hide PHP version ---
+<IfModule mod_php.c>
+    php_flag expose_php Off
+</IfModule>
+
+# --- Force HTTPS (uncomment in production) ---
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} !=on
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+# </IfModule>

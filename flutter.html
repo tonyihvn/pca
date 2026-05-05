@@ -582,6 +582,7 @@ You will start by mastering <strong>Dart programming</strong> fundamentals, then
                 Registration submitted successfully! Our team will contact you shortly.
             </div>
                 <form  id="registrationForm"  class="space-y-6">
+                    <input type="hidden" id="course" name="course" value="Flutter">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Full Name</label>
@@ -704,8 +705,7 @@ console.log("test2");
         phone: document.getElementById("phone").value,
         level: document.getElementById("level").value,
 		description: document.getElementById("description").value.trim(),
-		course:"Flutter"
-		
+		course: document.getElementById("course").value
     };
 
     // UI loading state
@@ -714,7 +714,7 @@ console.log("test2");
 
 
     try {
-        const response = await fetch("http://localhost:8080/api/register", {
+        const response = await fetch("api/register.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
