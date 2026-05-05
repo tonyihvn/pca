@@ -37,8 +37,14 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
 }
 
 // ---- Origin/Referer check -------------------------------------------------
-$source = $origin !== '' ? $origin : ($_SERVER['HTTP_REFERER'] ?? '');
-if ($source !== '' && !empty($config['allowed_origins'])) {
+// Always allow same-origin requests (the form is on the same host as this API).
+// Otherwise the request must match one of the configured allowed_origins.
+$source     = $origin !== '' ? $origin : ($_SERVER['HTTP_REFERER'] ?? '');
+$serverHost = strtolower($_SERVER['HTTP_HOST'] ?? '');
+$sourceHost = $source !== '' ? strtolower((string) parse_url($source, PHP_URL_HOST)) : '';
+$sameOrigin = $sourceHost !== '' && $sourceHost === $serverHost;
+
+if (!$sameOrigin && $source !== '' && !empty($config['allowed_origins'])) {
     $ok = false;
     foreach ($config['allowed_origins'] as $allowed) {
         if (stripos($source, $allowed) === 0) { $ok = true; break; }
