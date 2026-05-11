@@ -1,5 +1,6 @@
 # Configuration files with sensitive data
 includes/config.php
+includes/config.sample.php
 
 # System files
 .DS_Store
