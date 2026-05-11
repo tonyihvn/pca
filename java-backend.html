@@ -451,7 +451,7 @@
                 Registration submitted successfully! Our team will contact you shortly.
             </div>
                 <form  id="registrationForm"  class="space-y-6">
-                    <input type="hidden" id="course" name="course" value="Java-Backend">
+                    <input type="hidden" id="courseField" name="course" value="Java-Backend">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Full Name</label>
@@ -571,7 +571,7 @@ console.log("test2");
         phone: document.getElementById("phone").value,
         level: document.getElementById("level").value,
 		description: document.getElementById("description").value.trim(),
-		course: document.getElementById("course").value
+		course: document.getElementById("courseField").value
     };
 
     // UI loading state
