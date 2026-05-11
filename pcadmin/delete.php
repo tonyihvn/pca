@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
+header('Content-Type: application/json; charset=utf-8');
+
 define('BOOTSTRAP_API', true);
 $config = require __DIR__ . '/../includes/bootstrap.php';
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/db.php';
-
-header('Content-Type: application/json; charset=utf-8');
 
 // ---- Auth check ---------------------------------------------------------------
 start_admin_session($config);
