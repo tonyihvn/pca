@@ -197,6 +197,7 @@ pcadmin_head('Registrations');
 <?php endif; ?>
 
 <script>
+const csrfToken = '<?= csrf_token() ?>';
 document.querySelectorAll('.delete-btn').forEach(btn => {
     btn.addEventListener('click', async function() {
         const id = this.dataset.id;
@@ -206,7 +207,8 @@ document.querySelectorAll('.delete-btn').forEach(btn => {
             const response = await fetch('delete.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id: id })
+                credentials: 'same-origin',
+                body: JSON.stringify({ id: id, csrf: csrfToken })
             });
             
             const result = await response.json();

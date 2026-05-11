@@ -9,7 +9,11 @@ header('Content-Type: application/json; charset=utf-8');
 
 // ---- Auth check ---------------------------------------------------------------
 start_admin_session($config);
-admin_require_login('login.php');
+if (!admin_is_logged_in()) {
+    http_response_code(401);
+    echo json_encode(['status' => 'error', 'message' => 'Unauthorized']);
+    exit;
+}
 
 // ---- Validate request --------------------------------------------------------
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
@@ -21,6 +25,13 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
 $raw = file_get_contents('php://input');
 $data = json_decode($raw, true);
 $id = (int)($data['id'] ?? 0);
+$csrf = trim((string)($data['csrf'] ?? ''));
+
+if (!csrf_check($csrf)) {
+    http_response_code(403);
+    echo json_encode(['status' => 'error', 'message' => 'CSRF token invalid']);
+    exit;
+}
 
 if ($id <= 0) {
     http_response_code(400);
