@@ -20,6 +20,9 @@ DirectoryIndex index.php
 <Files "contacts.php">
     Require all granted
 </Files>
+<Files "delete.php">
+    Require all granted
+</Files>
 
 # Deny sensitive file types
 <FilesMatch "\.(sql|md|log|env|ini|sample\.php|bak|old)$">
