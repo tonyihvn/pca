@@ -139,6 +139,7 @@ pcadmin_head('Registrations');
                     <th class="text-left px-4 py-3">Phone</th>
                     <th class="text-left px-4 py-3">Level</th>
                     <th class="text-left px-4 py-3">Notes</th>
+                    <th class="text-center px-4 py-3">Action</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
@@ -167,6 +168,11 @@ pcadmin_head('Registrations');
                             <span class="text-slate-300">&mdash;</span>
                         <?php endif; ?>
                     </td>
+                    <td class="px-4 py-3 text-center">
+                        <button type="button" data-id="<?= (int)$r['id'] ?>" class="delete-btn text-red-600 hover:text-red-900 hover:bg-red-50 px-2 py-1 rounded text-xs font-bold transition">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
                 </tr>
             <?php endforeach; endif; ?>
             </tbody>
@@ -189,5 +195,32 @@ pcadmin_head('Registrations');
     </div>
 </div>
 <?php endif; ?>
+
+<script>
+document.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', async function() {
+        const id = this.dataset.id;
+        if (!confirm('Are you sure you want to delete this registration?')) return;
+        
+        try {
+            const response = await fetch('delete.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: id })
+            });
+            
+            const result = await response.json();
+            if (result.status === 'success') {
+                this.closest('tr').remove();
+                alert('Registration deleted successfully.');
+            } else {
+                alert('Error: ' + (result.message || 'Could not delete registration'));
+            }
+        } catch (e) {
+            alert('Network error: ' + e.message);
+        }
+    });
+});
+</script>
 
 <?php pcadmin_foot();
